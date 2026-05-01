@@ -101,6 +101,9 @@ body {
 }
 .toggle button.ig.active { color: #C13584; }
 .toggle button.ig.active .toggle-icon { color: #C13584; }
+.toggle button.li { color: var(--muted); }
+.toggle button.li:hover { color: #0A66C2; }
+.toggle button.li.active { color: #0A66C2; }
 .toggle-icon {
   width: 14px; height: 14px;
   display: flex; align-items: center; justify-content: center;
@@ -916,7 +919,15 @@ body {
           </svg>
         </span>Instagram
       </button>
+      <button id="tabLi" class="li" onclick="switchTab('li')">
+        <span class="toggle-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </span>LinkedIn
+      </button>
     </div>
+
     <div class="nav-meta">
       <strong>May 1, 2025 – Apr 24, 2026</strong> · 359 days
     </div>
@@ -983,6 +994,9 @@ body {
       <div class="arrow-target-num">~648</div>
       <div class="arrow-target-label">views per day average</div>
     </div>
+  </div>
+  <div style="font-size:13px;color:var(--muted);margin:-12px 0 20px;padding:14px 24px;background:var(--fb-blue-lighter);border-radius:10px;line-height:1.65;border:1px solid rgba(24,119,242,0.12);">
+    <span style="font-weight:600;color:var(--text);">Unique viewers</span> — data available from Aug 1, 2025 only. During Aug 1 2025–Apr 24 2026: <b style="color:var(--text);">98,558 unique viewers</b> from 205,647 page views. That means <span style="font-size:16px;font-weight:800;color:var(--fb-blue);">48.0%</span> of page views came from unique individuals.
   </div>
 
   <!-- Row 2: Engagement Donut -->
@@ -1102,6 +1116,9 @@ body {
       <div class="arrow-target-num">906</div>
       <div class="arrow-target-label">avg views per post</div>
     </div>
+  </div>
+  <div style="font-size:13px;color:var(--muted);margin:-12px 0 20px;padding:14px 24px;background:var(--fb-blue-lighter);border-radius:10px;line-height:1.65;border:1px solid rgba(24,119,242,0.12);">
+    <span style="font-weight:600;color:var(--text);">Unique viewers</span> — data available from Aug 1, 2025 only. During Aug 1 2025–Apr 24 2026: <b style="color:var(--text);">98,384 unique viewers</b> from 168,773 post views. That means <span style="font-size:16px;font-weight:800;color:var(--fb-blue);">58.3%</span> of post views came from unique individuals.
   </div>
 
   <!-- Row 2: Visible Interactions Donut -->
@@ -1299,46 +1316,10 @@ body {
 </div>
 </section>
 
-<!-- ===== SECTION 3: MONTHLY TRENDS ===== -->
+<!-- ===== SECTION 3: TOP PERFORMING POSTS ===== -->
 <section class="section">
 <div class="page">
   <div class="eyebrow">Section 3</div>
-  <h2 class="section-title">Monthly Performance Trends</h2>
-
-  <div class="chart-container">
-    <div class="chart-title">Monthly Views &amp; Interactions [Page Level]</div>
-    <div class="chart-sub">Views (left axis) vs. page-level interactions — reactions, comments &amp; shares (right axis)</div>
-    <div class="chart-wrap"><canvas id="chartMonthly"></canvas></div>
-  </div>
-
-  <div class="chart-container">
-    <div class="chart-title">Monthly Views &amp; Interactions [Content Level]</div>
-    <div class="chart-sub">Post views (left axis) vs. visible post interactions — reactions, comments, shares &amp; saves (right axis)</div>
-    <div class="chart-wrap"><canvas id="chartMonthlyContent"></canvas></div>
-  </div>
-
-  <div class="chart-container">
-    <div class="chart-title">Avg. Views per Post vs. Posts Published</div>
-    <div class="chart-sub">More posts ≠ more reach — the inverse relationship from the content export</div>
-    <div class="chart-wrap"><canvas id="chartFreq"></canvas></div>
-  </div>
-
-  <!-- Combined note -->
-  <div style="background:var(--card);border:1px solid var(--border-soft);border-left:4px solid var(--fb-blue);border-radius:0 14px 14px 0;padding:24px 28px;margin-top:14px;">
-    <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.005em;">Storytelling peaks, not posting volume — and Ramadan 2026 confirmed it.</div>
-    <div style="font-size:14px;color:var(--muted);line-height:1.75;">
-      More posts do not produce more views. The highest-reach months — October through December — ran at 9–18 posts and were carried by high-resonance content: the Palestinian Plate Art event, the 20-Year Gala, and the Mirchi Café launch. January's 34K content-level views look impressive, but <b style="color:var(--text);">a single post drove 12,620 of them</b> — the story of Salma &amp; Terry's Nikkah, where a wedding became a community fundraiser for Gaza orphans. Remove it and January is unremarkable.
-      <br><br>
-      March 2026 is the clearest proof. With <b style="color:var(--text);">51 posts published</b> — the most of any month — views collapsed to 12,284 and average reach fell to just <b style="color:var(--text);">241 views per post</b>. Every one of those 51 posts was Ramadan-related: iftar moments, orphan sponsorship appeals, and donation asks. This is GiveLight's most important fundraising window, yet it produced the weakest per-post reach of the year — likely a combination of Facebook penalizing high-frequency accounts and its algorithm suppressing donation-language content. Ramadan reached the already-converted and never broke through to new audiences.
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ===== SECTION 4: TOP PERFORMING POSTS ===== -->
-<section class="section">
-<div class="page">
-  <div class="eyebrow">Section 4</div>
   <h2 class="section-title">Top 10 Posts by Views</h2>
   <p class="section-sub">The posts that reached the most people this year. Every single one is a Photo or text post — no Reels in the top 10. Storytelling, events, and milestones dominate.</p>
 
@@ -1457,14 +1438,14 @@ body {
 </div>
 </section>
 
-<!-- ===== SECTION 5: BOTTOM POSTS ===== -->
+<!-- ===== SECTION 4: BOTTOM POSTS ===== -->
 <section class="section">
 <div class="page">
-  <div class="eyebrow">Section 5</div>
-  <h2 class="section-title">Bottom 10 Posts by Views</h2>
-  <p class="section-sub">The posts that reached almost no one. A clear pattern emerges: most are Ramadan/Eid 2026 fundraising asks. The community engaged but the algorithm did not amplify.</p>
+  <div class="eyebrow">Section 4</div>
+  <h2 class="section-title">Bottom 10 Posts by Interactions</h2>
+  <p class="section-sub">Ranked by lowest visible interactions (reactions + comments + shares + saves). We measure by interactions rather than views here because Facebook inaccurately reports some highly-interacted posts with unreasonably low view counts — interactions are a more reliable signal of true underperformance.</p>
 
-    <div class="post-list">
+  <div class="post-list">
     <div class="post-row head">
       <div>#</div>
       <div>Post</div>
@@ -1476,107 +1457,140 @@ body {
     </div>
     <div class="post-row">
       <div class="post-rank">1</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1382198053945805&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Your support is making a tremendous difference for GiveLight children — matching donation request.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Apr 18, 2026</div>
-      <div class="post-num lead">2</div>
-      <div class="post-num muted">4</div>
-      <div class="post-num muted">200.00%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/videos/2144613906490176/" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Spreading happiness with Multan Home, Pakistan — laughter, smiles, and carefree moments.</a></div>
+      <div><span class="post-type reel">Reel</span></div>
+      <div class="post-date">Mar 16, 2026</div>
+      <div class="post-num lead">47</div>
+      <div class="post-num muted">0</div>
+      <div class="post-num muted">0.00%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">2</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1357469549751989&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Eid Mubarak to our cherished community and friends who are celebrating.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Mar 20, 2026</div>
-      <div class="post-num lead">3</div>
-      <div class="post-num muted">7</div>
-      <div class="post-num muted">233.30%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid0EmY35siAzTrzRtm9LrbU7AjMTuSMjH6wkdwvtvZAd3JuaXXYefMhaimBMao98Vpml" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ramadan Hadith Series Day 26 — Search for Laylatul Qadr in the odd nights of the last ten days.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Mar 16, 2026</div>
+      <div class="post-num lead">58</div>
+      <div class="post-num muted">0</div>
+      <div class="post-num muted">0.00%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">3</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1356282219870722&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Smiles across the globe — GiveLight children in Bangladesh celebrating Eid with new clothes.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Mar 18, 2026</div>
-      <div class="post-num lead">3</div>
-      <div class="post-num muted">4</div>
-      <div class="post-num muted">133.30%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid0QgxtWy3nQi9qJaYTsWxh9cCkadDqrESiMDtwKvzn9FxixqtNEkKdab9dY1eB2syql" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">You are invited to our GiveLight Monthly Lunch — April 29, 2026 at Chickin Drip.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Apr 23, 2026</div>
+      <div class="post-num lead">119</div>
+      <div class="post-num muted">0</div>
+      <div class="post-num muted">0.00%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">4</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1334073245424953&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ramadan Kareem — may this blessed month bring peace to every heart, hope to every home.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Feb 19, 2026</div>
-      <div class="post-num lead">4</div>
-      <div class="post-num muted">3</div>
-      <div class="post-num muted">75.00%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid0Yj5AticnrMxpbGpqjmMdbBRUwtyFNYbHUCB7qF8RFFjquLvawsvkCEaeeNDduqZ2l" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ramadan Hadith Series Day 22 — Laylatul Qadr is a night of mercy and forgiveness.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Mar 12, 2026</div>
+      <div class="post-num lead">92</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">1.09%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">5</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1193059806192965&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">A selection of our amazing guests and hostess from the Louisville, Kentucky event.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Sep 3, 2025</div>
-      <div class="post-num lead">5</div>
-      <div class="post-num muted">41</div>
-      <div class="post-num muted">820.00%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid09BQAvMf5bBMxvEUyFWteyuNaHrhWuyFgC1JHu3F5Vh8bRgfPpkSa47mrnyFEFbL5l" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ramadan Hadith Series Day 23 — Prayer is the foundation of our faith.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Mar 13, 2026</div>
+      <div class="post-num lead">95</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">1.05%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">6</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1148259517339661&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">UCLA Muslim Student Association study night fundraiser — students raised 100% for GiveLight.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Jul 10, 2025</div>
-      <div class="post-num lead">6</div>
-      <div class="post-num muted">30</div>
-      <div class="post-num muted">500.00%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid0BbQbgBE9m4ViNRAfsPzfP5oKqgYC6tf3CZYbuvxjNZzMahNZoKLP96Fz9WyqmhGSl" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ramadan Hadith Series Day 25 — The odor from the mouth of a fasting person is better to Allah than musk.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Mar 15, 2026</div>
+      <div class="post-num lead">103</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">0.97%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">7</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1283338717165073&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">We are so grateful the help has reached our children — Aceh transitory home update.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Dec 19, 2025</div>
-      <div class="post-num lead">7</div>
-      <div class="post-num muted">26</div>
-      <div class="post-num muted">371.40%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid0aYTgjXaQZxFgjnHqVZGfpEuHugKmf5VFXFGVziJcKCpPTYJRnuX8ihsZz8xuRR3bl" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">The sweetness of faith isn't found in words — it's found in love. Ramadan reflection.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Feb 24, 2026</div>
+      <div class="post-num lead">106</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">0.94%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">8</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1246982270800718&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Thank you all for a successful Global Bistro this Sunday!</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Nov 3, 2025</div>
-      <div class="post-num lead">8</div>
-      <div class="post-num muted">37</div>
-      <div class="post-num muted">462.50%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid02LHjqS7LKNuoWXPALkusw6FhCDBCNz1bRkor7PgK4qFheb7pji4tarsvi7kopReswl" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">This Ramadan, be the light in a child's life — support the GiveLight Foundation.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Feb 25, 2026</div>
+      <div class="post-num lead">108</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">0.93%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">9</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1269729541859324&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">GiveLight × UCLA — Dian spoke to students about volunteering and starting a GiveLight chapter.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Dec 1, 2025</div>
-      <div class="post-num lead">11</div>
-      <div class="post-num muted">26</div>
-      <div class="post-num muted">236.40%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/posts/pfbid02Z1ZaE6gbc5efboNmBRCjHYTWVekVkQR4X4eabYibuS7M1QhEnDDfUHHSEiJwdul" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ramadan 30 Hadith in 30 Days Day 21 — Allah is Most Generous and loves generosity.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Mar 11, 2026</div>
+      <div class="post-num lead">112</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">0.89%</div>
     </div>
     <div class="post-row">
       <div class="post-rank">10</div>
-      <div class="post-title"><a href="https://www.facebook.com/photo.php?fbid=1324279346404343&set=a.479025580929728&type=3" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">From miles to meals — Sacramento teams celebrating a strong finish at the Virtual Global Walk.</a></div>
-      <div><span class="post-type">Photo</span></div>
-      <div class="post-date">Feb 8, 2026</div>
-      <div class="post-num lead">36</div>
-      <div class="post-num muted">19</div>
-      <div class="post-num muted">52.80%</div>
+      <div class="post-title"><a href="https://www.facebook.com/GiveLightFoundation/videos/1292578012921970/" target="_blank" rel="noopener" style="color:var(--fb-blue);text-decoration:none;font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">GiveLight children at Sri Lanka Home thank you for the iftar they shared together.</a></div>
+      <div><span class="post-type content">Text</span></div>
+      <div class="post-date">Mar 3, 2026</div>
+      <div class="post-num lead">115</div>
+      <div class="post-num muted">1</div>
+      <div class="post-num muted">0.87%</div>
     </div>
   </div>
-  <div style="font-size:11px;color:var(--muted);padding:10px 20px 4px;font-style:italic;">* Interaction rates above 100% occur when reactions were recorded before the view counter registered — a known Facebook measurement quirk on low-reach posts.</div>
-
 
   <div style="background:var(--card);border:1px solid var(--border-soft);border-left:4px solid var(--red);border-radius:0 14px 14px 0;padding:24px 28px;margin-top:28px;">
-    <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.005em;">Donation language suppresses reach — in Ramadan and beyond.</div>
+    <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.005em;">Ramadan 2026 content generated almost no interaction — and the pattern is unmistakable.</div>
     <div style="font-size:14px;color:var(--muted);line-height:1.75;">
-      Three of the bottom 10 are Ramadan/Eid 2026 posts — generic seasonal greetings that received almost no distribution during the year's most important giving window. The Apr 18 post makes the pattern broader: a corporate matching donation ask published well after Ramadan ended, yet equally invisible. <b style="color:var(--text);">Direct fundraising language appears to suppress reach regardless of season</b> — the algorithm consistently limits how far these posts travel.
+      Nine of the bottom 10 posts by interactions are from the Ramadan 2026 period (Feb–Apr 2026). The content falls into two clear types: the <b style="color:var(--text);">Ramadan Hadith Series</b> — daily religious quotes published throughout March — and <b style="color:var(--text);">generic donation and iftar appeals</b>. Despite reaching 47–200 views each, almost none prompted a single reaction. This isn't an audience engagement problem — it's a content-type mismatch. Templated daily series posts and text-only donation asks are the formats GiveLight's audience consistently ignores, even during the period they're most likely to give.
     </div>
   </div>
 </div>
 </section>
 
+<!-- ===== SECTION 5: MONTHLY TRENDS ===== -->
+<section class="section">
+<div class="page">
+  <div class="eyebrow">Section 5</div>
+  <h2 class="section-title">Monthly Performance Trends</h2>
+
+  <div class="chart-container">
+    <div class="chart-title">Avg. Views per Post vs. Posts Published</div>
+    <div class="chart-sub">More posts ≠ more reach — the inverse relationship from the content export</div>
+    <div class="chart-wrap"><canvas id="chartFreq"></canvas></div>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">Monthly Views &amp; Interactions [Page Level]</div>
+    <div class="chart-sub">Views (left axis) vs. page-level interactions — reactions, comments &amp; shares (right axis)</div>
+    <div class="chart-wrap"><canvas id="chartMonthly"></canvas></div>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">Monthly Views &amp; Interactions [Content Level]</div>
+    <div class="chart-sub">Post views (left axis) vs. visible post interactions — reactions, comments, shares &amp; saves (right axis)</div>
+    <div class="chart-wrap"><canvas id="chartMonthlyContent"></canvas></div>
+  </div>
+
+  <!-- Combined note -->
+  <div style="background:var(--card);border:1px solid var(--border-soft);border-left:4px solid var(--fb-blue);border-radius:0 14px 14px 0;padding:24px 28px;margin-top:14px;">
+    <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.005em;">Storytelling peaks, not posting volume — and Ramadan 2026 confirmed it.</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.75;">
+      More posts do not produce more views. The highest-reach months — October through December — ran at 9–18 posts and were carried by high-resonance content: the Palestinian Plate Art event, the 20-Year Gala, and the Mirchi Café launch. January's 34K content-level views look impressive, but <b style="color:var(--text);">a single post drove 12,620 of them</b> — the story of Salma &amp; Terry's Nikkah, where a wedding became a community fundraiser for Gaza orphans. Remove it and January is unremarkable.
+      <br><br>
+      March 2026 is the clearest proof. With <b style="color:var(--text);">51 posts published</b> — the most of any month — views collapsed to 12,284 and average reach fell to just <b style="color:var(--text);">241 views per post</b>. Every one of those 51 posts was Ramadan-related: iftar moments, orphan sponsorship appeals, and donation asks. This is GiveLight's most important fundraising window, yet it produced the weakest per-post reach of the year — likely a combination of Facebook penalizing high-frequency accounts and its algorithm suppressing donation-language content. Ramadan reached the already-converted and never broke through to new audiences.
+    </div>
+  </div>
+</div>
+</section>
 
 <!-- ===== SECTION 6: AUDIENCE ===== -->
 <section class="section">
@@ -1712,7 +1726,8 @@ body {
   <div class="eyebrow">Section 7</div>
   <h2 class="section-title">Posting Patterns &amp; The CTA Paradox</h2>
 
-  <div class="chart-container">
+  <div class="chart-row">
+    <div class="chart-container">
       <div class="chart-title">Avg. Post Views by Day Published</div>
       <div class="chart-sub">Average views per post based on the day it was published — Friday and Sunday outperform, Saturday is the dead zone</div>
       <div class="bar-list" style="margin-top: 24px;">
@@ -1753,41 +1768,68 @@ body {
         </div>
       </div>
     </div>
+    <div class="chart-container">
+      <div class="chart-title">Avg. Post Views by Time of Day Published</div>
+      <div class="chart-sub">Based on the hour a post was published — Afternoon leads, Night significantly underperforms</div>
+      <div class="bar-list" style="margin-top: 24px;">
+        <div class="bar-row" style="grid-template-columns: 160px 1fr 60px;">
+          <div class="bar-label">Afternoon (12–5pm)</div>
+          <div class="bar-track"><div class="bar-fill fb-deep" style="width: 100%;"></div></div>
+          <div class="bar-num">1,275</div>
+        </div>
+        <div class="bar-row" style="grid-template-columns: 160px 1fr 60px;">
+          <div class="bar-label">Morning (5am–12pm)</div>
+          <div class="bar-track"><div class="bar-fill fb" style="width: 82.5%;"></div></div>
+          <div class="bar-num">1,052</div>
+        </div>
+        <div class="bar-row" style="grid-template-columns: 160px 1fr 60px;">
+          <div class="bar-label">Evening (5–9pm)</div>
+          <div class="bar-track"><div class="bar-fill muted" style="width: 61.8%;"></div></div>
+          <div class="bar-num">788</div>
+        </div>
+        <div class="bar-row" style="grid-template-columns: 160px 1fr 60px;">
+          <div class="bar-label">Night (9pm–5am)</div>
+          <div class="bar-track"><div class="bar-fill red" style="width: 30.7%;"></div></div>
+          <div class="bar-num">392</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- THE CTA PARADOX -->
   <div class="chart-container" style="background: linear-gradient(135deg, #FCE8EB 0%, #FFFFFF 60%); border-color: #FAC9CF;">
     <div style="display:flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; gap: 18px; flex-wrap: wrap;">
       <div>
         <div class="chart-title" style="color: var(--red);">The CTA Paradox</div>
-        <div class="chart-sub">Posts asking for donations reach <b>61% fewer people</b> than posts that don't</div>
+        <div class="chart-sub">Posts linking directly to givelight.org/donate reach <b>82% fewer people</b> than posts without a donate link</div>
       </div>
-      <div style="font-size: 11px; color: var(--muted); font-weight: 500;">193 CTA posts · 16 non-CTA posts</div>
+      <div style="font-size: 11px; color: var(--muted); font-weight: 500;">61 posts with donate link · 148 without</div>
     </div>
 
     <div class="split-grid" style="margin-bottom: 0;">
       <div class="split-card" style="background: var(--card); border-color: var(--border);">
-        <div class="split-title" style="color: var(--red);">Posts WITH donation CTA</div>
-        <div style="font-size:42px;font-weight:800;color:var(--red);letter-spacing:-0.025em;line-height:1;">809</div>
-        <div style="font-size:13px;color:var(--muted);margin-top:6px;">avg views per post</div>
+        <div class="split-title" style="color: var(--red);">Posts WITH givelight.org/donate link</div>
+        <div style="font-size:42px;font-weight:800;color:var(--red);letter-spacing:-0.025em;line-height:1;">214</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px;">avg views per post · 61 posts</div>
         <div style="display:flex; gap:24px; margin-top:18px; padding-top:14px; border-top:1px solid var(--border-soft);">
-          <div><div style="font-size:18px;font-weight:700;color:var(--text);">12.2</div><div style="font-size:11px;color:var(--muted);">avg interactions</div></div>
+          <div><div style="font-size:18px;font-weight:700;color:var(--text);">4.4</div><div style="font-size:11px;color:var(--muted);">avg interactions</div></div>
         </div>
       </div>
       <div class="split-card" style="background: var(--card); border-color: var(--border);">
-        <div class="split-title" style="color: var(--green);">Posts WITHOUT donation CTA</div>
-        <div style="font-size:42px;font-weight:800;color:var(--green);letter-spacing:-0.025em;line-height:1;">2,080</div>
-        <div style="font-size:13px;color:var(--muted);margin-top:6px;">avg views per post</div>
+        <div class="split-title" style="color: var(--green);">Posts WITHOUT donate link</div>
+        <div style="font-size:42px;font-weight:800;color:var(--green);letter-spacing:-0.025em;line-height:1;">1,191</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px;">avg views per post · 148 posts</div>
         <div style="display:flex; gap:24px; margin-top:18px; padding-top:14px; border-top:1px solid var(--border-soft);">
-          <div><div style="font-size:18px;font-weight:700;color:var(--text);">30.7</div><div style="font-size:11px;color:var(--muted);">avg interactions</div></div>
+          <div><div style="font-size:18px;font-weight:700;color:var(--text);">19.7</div><div style="font-size:11px;color:var(--muted);">avg interactions</div></div>
         </div>
       </div>
     </div>
   </div>
 
   <div style="background:var(--card);border:1px solid var(--border-soft);border-left:4px solid var(--red);border-radius:0 14px 14px 0;padding:24px 28px;margin-top:28px;width:100%;box-sizing:border-box;">
-    <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.005em;">The algorithm penalizes donation asks</div>
+    <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.005em;">The algorithm suppresses direct donation links — 82% fewer views</div>
     <div style="font-size:14px;color:var(--muted);line-height:1.75;">
-      Posts containing donation language — "donate", "sponsor", or links to fundraising pages — reach <b style="color:var(--text);">61% fewer people</b> than posts without. Facebook down-ranks content that drives users off-platform. The fix isn't to stop asking — it's to <b style="color:var(--text);">tell the story first and ask second</b>.
+      Posts linking directly to givelight.org/donate averaged just <b style="color:var(--text);">214 views</b> — compared to <b style="color:var(--text);">1,191 views</b> for posts without a donate link. That's an <b style="color:var(--text);">82% reduction in reach</b> purely from including the URL. Facebook's algorithm down-ranks content that drives users off-platform. The fix isn't to stop asking — it's to <b style="color:var(--text);">tell the story first, build emotional connection, and ask second</b>.
     </div>
   </div>
 </section>
@@ -1824,8 +1866,8 @@ body {
       <div class="finding-content">
         <span class="finding-tag warning">Warning</span>
         <h4>Ramadan 2026 underperformed — the prime fundraising window was missed</h4>
-        <p>Five of the bottom 10 posts were Ramadan/Eid 2026 messages. For a Muslim-American audience, Ramadan is the year's most important giving moment, yet posts averaged single-digit views.</p>
-        <p><b>Action:</b> Audit Ramadan content end-to-end before 2027. Lead with stories of children helped, not generic Ramadan greetings. Pair every post with a corresponding Reel and Story to maximize surface area.</p>
+        <p>Ramadan content dominated the bottom 10 posts by interactions. The culprits: a daily <b>Ramadan Hadith Series</b> (templated religious quotes) and generic donation appeals — formats the audience consistently ignored even during the year's highest-giving window. Not a single Hadith series post earned more than 1 interaction.</p>
+        <p><b>Action:</b> Replace templated series content with stories of specific children helped. Ramadan giving intent is high — the content needs to match it with emotional specificity, not generic appeals.</p>
       </div>
     </div>
 
@@ -1843,9 +1885,9 @@ body {
       <div class="finding-num">05</div>
       <div class="finding-content">
         <span class="finding-tag insight">Insight</span>
-        <h4>Friday + Sunday is the posting sweet spot — Saturday is dead</h4>
-        <p>Friday averages 1,339 views. Sunday hits 1,031. Saturday collapses to 308 — a <b>77% drop from Friday</b>. The community goes offline on Saturdays.</p>
-        <p><b>Action:</b> Schedule the week's two highest-priority posts on <b>Friday and Sunday</b>. Avoid Saturday unless covering a same-day event. Maintain a steady cadence Tuesday–Thursday for ongoing presence.</p>
+        <h4>Friday + Sunday + Afternoon is the posting sweet spot</h4>
+        <p>Friday (1,339 avg views) and Sunday (1,031) outperform all other days. Saturday collapses to 308 — a <b>77% drop</b>. By time of day, <b>Afternoon (12–5pm) leads at 1,275 avg views</b>; Night (9pm–5am) trails at 392.</p>
+        <p><b>Action:</b> Prioritize <b>Friday or Sunday afternoon</b> for highest-impact posts. Avoid Saturday and late-night publishing.</p>
       </div>
     </div>
   </div>
@@ -1854,7 +1896,18 @@ body {
 
 </main>
 
-<!-- =================== INSTAGRAM VIEW =================== -->
+<!-- =================== LINKEDIN VIEW =================== -->
+<main id="viewLi" class="hidden">
+  <div class="empty-state">
+    <div class="empty-icon" style="background: linear-gradient(135deg, #0A66C2 0%, #0077B5 100%);">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;" aria-hidden="true">
+        <path fill="white" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </div>
+    <div class="empty-title">LinkedIn Analytics Coming Soon</div>
+    <div class="empty-sub">Once LinkedIn data is exported and uploaded, this view will mirror the Facebook structure — baseline performance, monthly trends, top posts, audience, and key findings.</div>
+  </div>
+</main>
 <main id="viewIg" class="hidden">
   <div class="empty-state">
     <div class="empty-icon">📷</div>
@@ -1868,21 +1921,32 @@ body {
 function switchTab(tab) {
   const fbView = document.getElementById('viewFb');
   const igView = document.getElementById('viewIg');
+  const liView = document.getElementById('viewLi');
   const fbBtn = document.getElementById('tabFb');
   const igBtn = document.getElementById('tabIg');
+  const liBtn = document.getElementById('tabLi');
+
+  fbView.classList.add('hidden');
+  igView.classList.add('hidden');
+  liView.classList.add('hidden');
+  fbBtn.classList.remove('active');
+  igBtn.classList.remove('active');
+  liBtn.classList.remove('active');
+
   if (tab === 'fb') {
     fbView.classList.remove('hidden');
-    igView.classList.add('hidden');
     fbBtn.classList.add('active');
-    igBtn.classList.remove('active');
-  } else {
+  } else if (tab === 'ig') {
     igView.classList.remove('hidden');
-    fbView.classList.add('hidden');
     igBtn.classList.add('active');
-    fbBtn.classList.remove('active');
+  } else if (tab === 'li') {
+    liView.classList.remove('hidden');
+    liBtn.classList.add('active');
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function showComingSoon() { switchTab('li'); }
 
 /* ============ CHARTS ============ */
 const monthLabels = ['May \'25','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan \'26','Feb','Mar','Apr'];
